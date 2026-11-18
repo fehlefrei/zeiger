@@ -1,9 +1,9 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { and, asc, count, desc, eq } from 'drizzle-orm';
 import type { Actions, PageServerLoad } from './$types';
-import { auth } from '$lib/server/auth';
-import { db } from '$lib/server/db';
-import { folder, link, linkVisit } from '$lib/server/db/schema';
+import { auth } from '#lib/server/auth.ts';
+import { db } from '#lib/server/db/index.ts';
+import { folder, link, linkVisit } from '#lib/server/db/schema.ts';
 import {
 	fetchFavicon,
 	generateShort,
@@ -11,7 +11,7 @@ import {
 	normalizeShort,
 	normalizeUrl,
 	parseTags
-} from '$lib/server/links';
+} from '#lib/server/links.ts';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	if (!locals.user) redirect(302, '/login');

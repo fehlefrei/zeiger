@@ -1,10 +1,10 @@
 import { fail, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
 import type { Actions, PageServerLoad } from './$types';
-import { auth } from '$lib/server/auth';
+import { auth } from '#lib/server/auth.ts';
 import { APIError } from 'better-auth/api';
-import { db } from '$lib/server/db';
-import { user } from '$lib/server/db/schema';
+import { db } from '#lib/server/db/index.ts';
+import { user } from '#lib/server/db/schema.ts';
 
 const MIN_PASSWORD_LENGTH = 8;
 

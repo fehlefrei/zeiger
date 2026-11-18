@@ -2,8 +2,8 @@ import { error, fail, redirect } from '@sveltejs/kit';
 import { and, asc, count, desc, eq } from 'drizzle-orm';
 import QRCode from 'qrcode';
 import type { Actions, PageServerLoad } from './$types';
-import { db } from '$lib/server/db';
-import { folder, link, linkVisit, user } from '$lib/server/db/schema';
+import { db } from '#lib/server/db/index.ts';
+import { folder, link, linkVisit, user } from '#lib/server/db/schema.ts';
 import {
 	fetchFavicon,
 	generateShort,
@@ -11,7 +11,7 @@ import {
 	normalizeShort,
 	normalizeUrl,
 	parseTags
-} from '$lib/server/links';
+} from '#lib/server/links.ts';
 
 async function ownedLink(id: string, userId: string) {
 	const found = await db.query.link.findFirst({

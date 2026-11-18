@@ -8,13 +8,13 @@
 	import XIcon from '@lucide/svelte/icons/x';
 	import PlusIcon from '@lucide/svelte/icons/plus';
 	import ChevronDownIcon from '@lucide/svelte/icons/chevron-down';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Badge } from '$lib/components/ui/badge';
-	import * as Avatar from '$lib/components/ui/avatar';
-	import * as AlertDialog from '$lib/components/ui/alert-dialog';
-	import * as Card from '$lib/components/ui/card';
-	import * as DropdownMenu from '$lib/components/ui/dropdown-menu';
+	import { Button, buttonVariants } from '#lib/components/ui/button/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
+	import * as Avatar from '#lib/components/ui/avatar/index.ts';
+	import * as AlertDialog from '#lib/components/ui/alert-dialog/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.ts';
 	import type { ActionData, PageData } from './$types';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
@@ -116,13 +116,13 @@
 				<DropdownMenu.Content align="end">
 					<DropdownMenu.Item>
 						{#snippet child({ props })}
-							<a {...props} href={resolve('/account')}>Account settings</a>
+							<a {...props} href={resolve('account')}>Account settings</a>
 						{/snippet}
 					</DropdownMenu.Item>
 					<DropdownMenu.Separator />
 					<DropdownMenu.Item>
 						{#snippet child({ props })}
-							<a {...props} href={resolve('/api/export')}>Export JSON</a>
+							<a {...props} href={resolve('api/export')}>Export JSON</a>
 						{/snippet}
 					</DropdownMenu.Item>
 					<DropdownMenu.Item onSelect={() => fileInput?.click()}>Import JSON</DropdownMenu.Item>
@@ -257,10 +257,8 @@
 						<button
 							type="button"
 							class="text-xs text-muted-foreground hover:underline"
-							onclick={() => (selectedTags = [])}
+							onclick={() => (selectedTags = [])}>clear</button
 						>
-							clear
-						</button>
 					{/if}
 				</div>
 			{/if}

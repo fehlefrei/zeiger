@@ -1,8 +1,8 @@
 import { error } from '@sveltejs/kit';
 import { desc, eq } from 'drizzle-orm';
 import type { RequestHandler } from './$types';
-import { db } from '$lib/server/db';
-import { folder, link } from '$lib/server/db/schema';
+import { db } from '#lib/server/db/index.ts';
+import { folder, link } from '#lib/server/db/schema.ts';
 
 export const GET: RequestHandler = async ({ locals }) => {
 	if (!locals.user) error(401, 'Sign in to export your links');

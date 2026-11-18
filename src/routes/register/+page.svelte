@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { resolve } from '$app/paths';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import * as Card from '$lib/components/ui/card';
+	import { Button } from '#lib/components/ui/button/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
 	import type { ActionData } from './$types';
 
 	let { form }: { form: ActionData } = $props();
@@ -43,7 +43,8 @@
 		<Card.Footer>
 			<p class="text-sm text-muted-foreground">
 				Already have an account?
-				<a href={resolve('/login')} class="underline underline-offset-4 hover:text-foreground"
+
+				<a href={resolve('login')} class="underline underline-offset-4 hover:text-foreground"
 					>Sign in</a
 				>
 			</p>

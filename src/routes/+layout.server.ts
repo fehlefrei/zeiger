@@ -1,5 +1,5 @@
 import type { LayoutServerLoad } from './$types';
-import { preferredLocale } from '$lib/format';
+import { preferredLocale } from '#lib/format.ts';
 
 export const load: LayoutServerLoad = ({ locals, request }) => {
 	return {

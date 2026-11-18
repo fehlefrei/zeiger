@@ -1,8 +1,8 @@
 import { error, redirect } from '@sveltejs/kit';
 import { eq } from 'drizzle-orm';
 import type { RequestHandler } from './$types';
-import { db } from '$lib/server/db';
-import { link, linkVisit } from '$lib/server/db/schema';
+import { db } from '#lib/server/db/index.ts';
+import { link, linkVisit } from '#lib/server/db/schema.ts';
 
 export const GET: RequestHandler = async ({ params, locals, url, request }) => {
 	const found = await db.query.link.findFirst({ where: eq(link.short, params.short) });

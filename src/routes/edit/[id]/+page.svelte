@@ -1,20 +1,19 @@
 <script lang="ts">
-	import { enhance } from '$app/forms';
+	import { enhance, type SubmitFunction } from '$app/forms';
 	import { resolve } from '$app/paths';
 	import { page } from '$app/state';
 	import { Debounced } from 'runed';
 	import QRCode from 'qrcode';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import { Badge } from '$lib/components/ui/badge';
-	import { Switch } from '$lib/components/ui/switch';
-	import * as Card from '$lib/components/ui/card';
-	import * as Select from '$lib/components/ui/select';
-	import * as AlertDialog from '$lib/components/ui/alert-dialog';
-	import TagsInput from '$lib/components/tags-input.svelte';
-	import { formatDate, formatDateTime } from '$lib/format';
-	import type { SubmitFunction } from '@sveltejs/kit';
+	import { Button, buttonVariants } from '#lib/components/ui/button/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import { Badge } from '#lib/components/ui/badge/index.ts';
+	import { Switch } from '#lib/components/ui/switch/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import * as Select from '#lib/components/ui/select/index.ts';
+	import * as AlertDialog from '#lib/components/ui/alert-dialog/index.ts';
+	import TagsInput from '#lib/components/tags-input.svelte';
+	import { formatDate, formatDateTime } from '#lib/format.ts';
 	import type { ActionData, PageData } from './$types';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();

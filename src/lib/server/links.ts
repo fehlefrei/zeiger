@@ -1,7 +1,7 @@
 import { customAlphabet } from 'nanoid';
 import { and, eq, ne } from 'drizzle-orm';
-import { db } from '$lib/server/db';
-import { link } from '$lib/server/db/schema';
+import { db } from '#lib/server/db/index.ts';
+import { link } from '#lib/server/db/schema.ts';
 
 const shortId = customAlphabet('23456789abcdefghijkmnpqrstuvwxyz', 6);
 

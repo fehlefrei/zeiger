@@ -2,12 +2,12 @@
 	import { enhance } from '$app/forms';
 	import { resolve } from '$app/paths';
 	import { toast } from 'svelte-sonner';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Label } from '$lib/components/ui/label';
-	import { Switch } from '$lib/components/ui/switch';
-	import * as Card from '$lib/components/ui/card';
-	import { formatDate } from '$lib/format';
+	import { Button } from '#lib/components/ui/button/index.ts';
+	import { Input } from '#lib/components/ui/input/index.ts';
+	import { Label } from '#lib/components/ui/label/index.ts';
+	import { Switch } from '#lib/components/ui/switch/index.ts';
+	import * as Card from '#lib/components/ui/card/index.ts';
+	import { formatDate } from '#lib/format.ts';
 	import type { ActionData, PageData } from './$types';
 
 	let { data, form }: { data: PageData; form: ActionData } = $props();
